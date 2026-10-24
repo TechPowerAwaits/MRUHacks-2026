@@ -17,8 +17,10 @@ func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	var direction := Input.get_axis("move_left", "move_right")
 	if direction:
+		$AnimatedSprite2D.play("walking")
 		velocity.x = direction * SPEED
 	else:
+		$AnimatedSprite2D.stop()
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
