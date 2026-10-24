@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0nfjgqya24nb"
-valid=false
+uid="uid://12wc2li5ilr8"
+path="res://.godot/imported/level 1.webp-7ad81eb308e4b8d9be5640cfd1f0985b.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://assets/DCComics_DCZoomBackgrounds_v1f_900_5ea3808006a731.72754151.jpg"
+source_file="res://assets/level 1.webp"
+dest_files=["res://.godot/imported/level 1.webp-7ad81eb308e4b8d9be5640cfd1f0985b.ctex"]
 
 [params]
 
