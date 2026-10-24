@@ -72,3 +72,5 @@ position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_xj5dx")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=643042477]
+
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]

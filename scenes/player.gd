@@ -4,6 +4,12 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
+const WALK_TO_IDLE_FRAME = 2
+
+enum {IDLE, WALK, JUMP}
+
+@onready var state = IDLE
+
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -17,10 +23,18 @@ func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	var direction := Input.get_axis("move_left", "move_right")
 	if direction:
+		state = WALK
 		$AnimatedSprite2D.play("walking")
 		velocity.x = direction * SPEED
 	else:
-		$AnimatedSprite2D.stop()
+		state = IDLE
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+
+func _on_animated_sprite_2d_frame_changed() -> void:
+	if state == IDLE:
+		if ($AnimatedSprite2D.animation == "walking" and
+			$AnimatedSprite2D.frame == WALK_TO_IDLE_FRAME):
+				$AnimatedSprite2D.play("default")
