@@ -7,7 +7,6 @@ enum {IDLE, WALK, PREP_JUMP, JUMP}
 @export var speed = 300.0
 @export var short_jump_speed = 400.0
 @export var long_jump_speed = 800.0
-@export var long_jump_activation_time = 1
 
 @onready var state = IDLE
 
