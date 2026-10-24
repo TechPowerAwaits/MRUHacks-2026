@@ -10,6 +10,11 @@ enum {IDLE, WALK, JUMP}
 
 @onready var state = IDLE
 
+func _ready():
+	# There is supposed to be a property that allows you to autoplay an animation.
+	# I do not see it in the inspector, so here is this hack.
+	$AnimatedSprite2D.play("default")
+
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
