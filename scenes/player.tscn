@@ -45,17 +45,18 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xj5dx"]
-size = Vector2(20, 35)
+size = Vector2(53, 101)
 
 [node name="Player" type="CharacterBody2D" unique_id=1494202618]
 script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1183032141]
+scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_xj5dx")
 animation = &"walking"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1193183620]
-position = Vector2(0, 1.5)
+position = Vector2(-0.5, 2.5)
 shape = SubResource("RectangleShape2D_xj5dx")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=643042477]
