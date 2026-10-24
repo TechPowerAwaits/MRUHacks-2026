@@ -45,6 +45,7 @@ func handle_move():
 		var direction := Input.get_axis("move_left", "move_right")
 		if direction:
 			state = WALK
+			$AnimatedSprite2D.flip_h = (direction < 0)
 			$AnimatedSprite2D.play("walking")
 			velocity.x = direction * speed
 		else:
