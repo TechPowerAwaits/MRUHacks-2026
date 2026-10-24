@@ -2,10 +2,12 @@ extends CharacterBody2D
 
 const WALK_TO_IDLE_FRAME = 2
 
-enum {IDLE, WALK, JUMP}
+enum {IDLE, WALK, PREP_JUMP, JUMP}
 
 @export var speed = 300.0
 @export var short_jump_speed = 400.0
+@export var long_jump_speed = 800.0
+@export var long_jump_activation_time = 1
 
 @onready var state = IDLE
 
@@ -21,6 +23,15 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	# Handle jump.
+	if is_on_floor():
+		if Input.is_action_just_pressed("jump"):
+			state = PREP_JUMP
+			await get_tree().create_timer(long_jump_activation_time, true, true)
+			if state == PREP_JUMP:
+				velocity.y = -long_jump_speed
+		if Input.is_action_just_released("jump"):
+			if state == PREP_JUMP:
+				velocity.y = -short_jump_speed
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = -short_jump_speed
 
