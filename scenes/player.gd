@@ -1,12 +1,11 @@
 extends CharacterBody2D
 
-
-@export var speed = 300.0
-@export var short_jump_speed = 400.0
-
 const WALK_TO_IDLE_FRAME = 2
 
 enum {IDLE, WALK, JUMP}
+
+@export var speed = 300.0
+@export var short_jump_speed = 400.0
 
 @onready var state = IDLE
 
