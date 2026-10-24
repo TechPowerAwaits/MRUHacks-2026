@@ -2,10 +2,27 @@
 
 [ext_resource type="Script" uid="uid://gcnoqabjj8xu" path="res://scenes/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://katu4ilsvfhj" path="res://assets/noteboy.png" id="2_g2els"]
+[ext_resource type="Texture2D" uid="uid://1com5801d4rp" path="res://assets/noteboy idle.png" id="2_qhqgy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
-atlas = ExtResource("2_g2els")
+atlas = ExtResource("2_qhqgy")
+region = Rect2(0, 0, 48, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ur7pv"]
+atlas = ExtResource("2_qhqgy")
+region = Rect2(48, 0, 48, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4r1p"]
+atlas = ExtResource("2_qhqgy")
+region = Rect2(96, 0, 48, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2wvv"]
+atlas = ExtResource("2_qhqgy")
 region = Rect2(144, 0, 48, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3v2ag"]
+atlas = ExtResource("2_qhqgy")
+region = Rect2(192, 0, 48, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
 atlas = ExtResource("2_g2els")
@@ -32,6 +49,18 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qhqgy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ur7pv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4r1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2wvv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3v2ag")
 }],
 "loop": 1,
 "name": &"default",
