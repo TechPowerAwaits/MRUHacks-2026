@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://b5kltiofhqmda"]
+
+[ext_resource type="PackedScene" uid="uid://dngig7f5ntvwk" path="res://scenes/menu.tscn" id="1_jooxx"]
+[ext_resource type="Script" uid="uid://c56l83bt57h" path="res://scenes/master.gd" id="1_rnotf"]
+[ext_resource type="PackedScene" uid="uid://dcwqw78lf5fj1" path="res://scenes/scene_1.tscn" id="2_rnotf"]
+
+[node name="Master" type="Node2D" unique_id=1321728328]
+script = ExtResource("1_rnotf")
+
+[node name="Menu" parent="." unique_id=361797890 instance=ExtResource("1_jooxx")]
+
+[node name="Scene 1" parent="." unique_id=1033258207 instance=ExtResource("2_rnotf")]
+
+[connection signal="start_game" from="Menu" to="." method="_on_menu_start_game"]

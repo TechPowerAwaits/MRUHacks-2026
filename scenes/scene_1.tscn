@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dxjcxhpsk2cgr" path="res://assets/quaver note.png" id="4_lki8s"]
 [ext_resource type="Texture2D" uid="uid://ba5joy3wmhtdk" path="res://assets/half note.png" id="5_t6bmd"]
 [ext_resource type="FontFile" uid="uid://7lcbhsk16otq" path="res://assets/PixelifySans-VariableFont_wght.ttf" id="7_d7a6c"]
-[ext_resource type="PackedScene" uid="uid://commdma8h1twv" path="res://cd.tscn" id="8_g2j0d"]
+[ext_resource type="PackedScene" uid="uid://commdma8h1twv" path="res://scenes/cd.tscn" id="8_g2j0d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lki8s"]
 texture = ExtResource("2_cn2eb")
