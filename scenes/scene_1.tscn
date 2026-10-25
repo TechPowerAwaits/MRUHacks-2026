@@ -51,9 +51,9 @@ sources/0 = SubResource("TileSetAtlasSource_lki8s")
 
 [sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_2k8qw"]
 stream_count = 2
-stream_0/stream = ExtResource("5_d7a6c")
+stream_0/stream = ExtResource("6_g2j0d")
 stream_0/volume = 0.0
-stream_1/stream = ExtResource("6_g2j0d")
+stream_1/stream = ExtResource("5_d7a6c")
 stream_1/volume = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d7a6c"]
@@ -89,10 +89,11 @@ tile_set = SubResource("TileSet_d7a6c")
 [node name="Player" parent="." unique_id=1494202618 instance=ExtResource("3_sj5te")]
 position = Vector2(-920, 456)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=534593423]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=534593423 node_paths=PackedStringArray("player")]
 stream = SubResource("AudioStreamSynchronized_2k8qw")
 autoplay = true
 script = ExtResource("7_p837x")
+player = NodePath("../Player")
 
 [node name="Notes" type="TileMapLayer" parent="." unique_id=1971550015]
 scale = Vector2(2, 2)

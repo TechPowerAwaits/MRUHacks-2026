@@ -6,7 +6,7 @@ const PLAYER_MAX_X: float = 2.8
 const ZERO_VOLUME: int = -40
 
 
-@export var player: Node3D
+@export var player: Node2D
 @export var transition: float 
 
 var xmin: float
