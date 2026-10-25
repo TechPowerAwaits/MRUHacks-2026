@@ -23,7 +23,8 @@ func _physics_process(delta: float) -> void:
 	
 	handle_jump()
 	handle_move()
-	handle_angles()
+	# Bugged. Sometimes causes the player to be embedded within the platforms.
+	#handle_angles()
 
 	move_and_slide()
 
