@@ -1,14 +1,13 @@
 [gd_scene format=4 uid="uid://dcwqw78lf5fj1"]
 
 [ext_resource type="Script" uid="uid://dran5avnd7ysx" path="res://scenes/scene_1.gd" id="1_t6bmd"]
-[ext_resource type="Texture2D" uid="uid://udx8yaj7ojg3" path="res://assets/level 2.png" id="1_ta4h7"]
 [ext_resource type="Texture2D" uid="uid://c0j801ei403i0" path="res://assets/stave.png" id="2_cn2eb"]
+[ext_resource type="Texture2D" uid="uid://dmf6h2fvbuxh7" path="res://assets/level 1.jpg" id="2_ig65t"]
 [ext_resource type="PackedScene" uid="uid://crm8sqem28fq4" path="res://scenes/player.tscn" id="3_sj5te"]
 [ext_resource type="Texture2D" uid="uid://dxjcxhpsk2cgr" path="res://assets/quaver note.png" id="4_lki8s"]
 [ext_resource type="AudioStream" uid="uid://btr4j6wnn7skl" path="res://audio/Dirt And Grime - Father's Children.mp3" id="5_d7a6c"]
 [ext_resource type="Texture2D" uid="uid://ba5joy3wmhtdk" path="res://assets/half note.png" id="5_t6bmd"]
 [ext_resource type="AudioStream" uid="uid://ch11kowcwkwrm" path="res://audio/audiostatic.mp3" id="6_g2j0d"]
-[ext_resource type="Script" uid="uid://cpxs8cfy16071" path="res://scenes/audio_stream_player.gd" id="7_p837x"]
 [ext_resource type="FontFile" uid="uid://7lcbhsk16otq" path="res://assets/PixelifySans-VariableFont_wght.ttf" id="7_d7a6c"]
 [ext_resource type="PackedScene" uid="uid://commdma8h1twv" path="res://scenes/cd.tscn" id="8_g2j0d"]
 
@@ -51,13 +50,6 @@ texture = ExtResource("2_cn2eb")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_lki8s")
 
-[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_2k8qw"]
-stream_count = 2
-stream_0/stream = ExtResource("6_g2j0d")
-stream_0/volume = 0.0
-stream_1/stream = ExtResource("5_d7a6c")
-stream_1/volume = 0.0
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d7a6c"]
 texture = ExtResource("4_lki8s")
 0:3/size_in_atlas = Vector2i(3, 5)
@@ -84,7 +76,7 @@ script = ExtResource("1_t6bmd")
 [node name="Background" type="Sprite2D" parent="." unique_id=1695402113]
 position = Vector2(-296, 264)
 scale = Vector2(1.1924343, 1.1924342)
-texture = ExtResource("1_ta4h7")
+texture = ExtResource("2_ig65t")
 
 [node name="Staves" type="TileMapLayer" parent="." unique_id=856850464]
 position = Vector2(-848, 0)
@@ -93,12 +85,6 @@ tile_set = SubResource("TileSet_d7a6c")
 
 [node name="Player" parent="." unique_id=1494202618 instance=ExtResource("3_sj5te")]
 position = Vector2(-920, 456)
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=534593423 node_paths=PackedStringArray("player")]
-stream = SubResource("AudioStreamSynchronized_2k8qw")
-autoplay = true
-script = ExtResource("7_p837x")
-player = NodePath("../Player")
 
 [node name="Notes" type="TileMapLayer" parent="." unique_id=1971550015]
 scale = Vector2(2, 2)
@@ -112,6 +98,13 @@ label_settings = SubResource("LabelSettings_v5tiw")
 
 [node name="CD" parent="." unique_id=1814181835 instance=ExtResource("8_g2j0d")]
 position = Vector2(2582, -29)
+
+[node name="MusicAudio" type="AudioStreamPlayer" parent="." unique_id=653971873]
+stream = ExtResource("5_d7a6c")
+
+[node name="StaticAudio" type="AudioStreamPlayer" parent="." unique_id=1040922429]
+stream = ExtResource("6_g2j0d")
+autoplay = true
 
 [connection signal="died" from="Player" to="." method="_on_player_died"]
 [connection signal="cd_contact" from="CD" to="." method="_on_cd_cd_contact"]

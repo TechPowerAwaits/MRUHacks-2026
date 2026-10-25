@@ -4,6 +4,7 @@
 [ext_resource type="FontFile" uid="uid://7lcbhsk16otq" path="res://assets/PixelifySans-VariableFont_wght.ttf" id="2_lum1r"]
 [ext_resource type="Texture2D" uid="uid://bfi0bvgq70x2v" path="res://assets/between_lines.png" id="3_llbeh"]
 [ext_resource type="Texture2D" uid="uid://pse44pl6805n" path="res://assets/cd.png" id="5_62yk7"]
+[ext_resource type="AudioStream" uid="uid://btr4j6wnn7skl" path="res://audio/Dirt And Grime - Father's Children.mp3" id="6_62yk7"]
 [ext_resource type="Texture2D" uid="uid://dvwqy3xc1mp4j" path="res://assets/Who's gonna save the world.jpg" id="6_oevsa"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_ng0as"]
@@ -61,3 +62,7 @@ offset_right = 561.0
 offset_bottom = 491.0
 text = "keep saving the world
 "
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1258014565]
+stream = ExtResource("6_62yk7")
+autoplay = true

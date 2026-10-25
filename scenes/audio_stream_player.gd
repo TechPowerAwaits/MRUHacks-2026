@@ -29,6 +29,7 @@ func _process(_delta: float)->void:
 	var px = player.position.x
 	var r = inverse_lerp(xmin, xmax, px)
 	
+	
 	stream.set_sync_stream_volume(0,
 		min(ZERO_VOLUME +
 		r*(-ZERO_VOLUME), 0.0))

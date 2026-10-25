@@ -13,6 +13,22 @@ func _process(delta: float) -> void:
 	const BACKGROUND_FOLLOW_SPEED = 5
 	$Background.position.x = lerp($Background.position.x, $Player.position.x, BACKGROUND_FOLLOW_SPEED * delta)
 	$Background.position.y = $Player.position.y
+	
+	var total_dist = $CD.position.x - player_start_pos.x
+	var player_dist = $Player.position.x - player_start_pos.x
+	var progress = player_dist / total_dist
+
+	if progress < 1.0 / 3.0:
+		pass
+	if !$MusicAudio.is_playing() && progress > 0.5:
+		$MusicAudio.play()
+	
+	$MusicAudio.volume_db = linear_to_db(progress)
+	$StaticAudio.volume_db = linear_to_db(1-progress)
+		
+	
+	#progress
+	
 
 
 func _on_cd_cd_contact() -> void:
