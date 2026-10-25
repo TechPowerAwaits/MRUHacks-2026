@@ -36,7 +36,7 @@ func handle_jump():
 		if Input.is_action_just_released("jump"):
 			$LongJumpTimer.stop()
 			if state == PREP_JUMP:
-				velocity.y = -short_jump_speed
+				velocity.y += -short_jump_speed
 				state = IDLE
 
 
@@ -58,7 +58,7 @@ func handle_angles():
 
 	if platform_angle != 0:
 		set_rotation(platform_angle)
-		velocity.x = sign(platform_angle) * speed / 2
+		velocity.x += sign(platform_angle) * speed / 2
 
 
 func _on_animated_sprite_2d_frame_changed() -> void:
@@ -70,5 +70,5 @@ func _on_animated_sprite_2d_frame_changed() -> void:
 
 func _on_long_jump_timer_timeout() -> void:
 	if is_on_floor() and state == PREP_JUMP:
-		velocity.y = -long_jump_speed
+		velocity.y += -long_jump_speed
 		state = IDLE
