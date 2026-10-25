@@ -13,3 +13,7 @@ func _process(delta: float) -> void:
 	const BACKGROUND_FOLLOW_SPEED = 5
 	$Background.position.x = lerp($Background.position.x, $Player.position.x, BACKGROUND_FOLLOW_SPEED * delta)
 	$Background.position.y = $Player.position.y
+
+
+func _on_player_died() -> void:
+	get_tree().change_scene_to_file("res://scenes/death.tscn")
