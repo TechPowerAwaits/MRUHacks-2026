@@ -74,6 +74,9 @@ texture = ExtResource("2_cn2eb")
 [sub_resource type="TileSet" id="TileSet_v5tiw"]
 sources/0 = SubResource("TileSetAtlasSource_p837x")
 
+[sub_resource type="LabelSettings" id="LabelSettings_v5tiw"]
+font_size = 22
+
 [node name="Scene 1" type="Node2D" unique_id=1033258207]
 script = ExtResource("1_t6bmd")
 
@@ -112,6 +115,37 @@ tile_map_data = PackedByteArray("AAAEABcAAAAAAAAAAAD8/xcAAAAAAAAAAAD7/xcAAAAAAAA
 tile_set = SubResource("TileSet_v5tiw")
 
 [node name="Text" type="Node" parent="." unique_id=2040545858]
+
+[node name="Label4" type="Label" parent="Text" unique_id=1354267731]
+offset_left = 442.0
+offset_top = 289.0
+offset_right = 873.0
+offset_bottom = 317.0
+text = "Find the lost media to save the world"
+label_settings = SubResource("LabelSettings_v5tiw")
+
+[node name="Label2" type="Label" parent="Text" unique_id=762572350]
+offset_left = -69.0
+offset_top = 197.0
+offset_right = 362.0
+offset_bottom = 225.0
+text = "Hold to jump higher"
+label_settings = SubResource("LabelSettings_v5tiw")
+
+[node name="Label" type="Label" parent="Text" unique_id=1654710301]
+offset_left = -969.0
+offset_top = 313.0
+offset_right = -538.0
+offset_bottom = 341.0
+text = "Use WASD or the arrow keys to navigate"
+label_settings = SubResource("LabelSettings_v5tiw")
+
+[node name="Label3" type="Label" parent="Text" unique_id=1755445252]
+offset_left = 1379.0
+offset_top = -126.0
+offset_right = 1652.0
+offset_bottom = -106.0
+text = "Sometimes you need a leap of faith"
 
 [connection signal="died" from="Player" to="." method="_on_player_died"]
 [connection signal="cd_contact" from="CD" to="." method="_on_cd_cd_contact"]
