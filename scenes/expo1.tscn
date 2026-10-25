@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://cg6a6q4v5qdfw"]
+
+[ext_resource type="Script" uid="uid://ds6w810g41113" path="res://scenes/menu.gd" id="1_4bcsy"]
+[ext_resource type="FontFile" uid="uid://7lcbhsk16otq" path="res://assets/PixelifySans-VariableFont_wght.ttf" id="2_lum1r"]
+[ext_resource type="Texture2D" uid="uid://bfi0bvgq70x2v" path="res://assets/between_lines.png" id="3_llbeh"]
+[ext_resource type="Texture2D" uid="uid://pse44pl6805n" path="res://assets/cd.png" id="5_62yk7"]
+[ext_resource type="Texture2D" uid="uid://dvwqy3xc1mp4j" path="res://assets/Who's gonna save the world.jpg" id="6_oevsa"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ng0as"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_v5tiw"]
+font = ExtResource("2_lum1r")
+
+[node name="Exposition" type="Node2D" unique_id=361797890]
+script = ExtResource("1_4bcsy")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=972220238]
+self_modulate = Color(0.22404602, 0.5087428, 1, 1)
+position = Vector2(478.75006, 271.25)
+scale = Vector2(958.5001, 543.5)
+texture = SubResource("CanvasTexture_ng0as")
+
+[node name="Label2" type="Label" parent="." unique_id=241339283]
+offset_left = 62.0
+offset_top = 53.0
+offset_right = 400.0
+offset_bottom = 76.0
+text = "Thank you for finding the song!"
+label_settings = SubResource("LabelSettings_v5tiw")
+
+[node name="Label2" type="Label" parent="Label2" unique_id=1059001767]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 314.0
+offset_right = 750.0
+offset_bottom = 380.0
+text = "You saved a song from \"Who's Gonna Save the World\" by Father's Children, a album recorded in April 1979, which spent decades in storage until it was finally discovered and released in 2011."
+label_settings = SubResource("LabelSettings_v5tiw")
+autowrap_mode = 3
+
+[node name="BetweenLines" type="Sprite2D" parent="." unique_id=434355790]
+position = Vector2(1385.0001, 253.00003)
+scale = Vector2(1.2599998, 1.2599999)
+texture = ExtResource("3_llbeh")
+
+[node name="Cd" type="Sprite2D" parent="." unique_id=1778802995]
+texture_filter = 1
+position = Vector2(481, 152.00002)
+scale = Vector2(5.34375, 5.34375)
+texture = ExtResource("5_62yk7")
+
+[node name="Who\'sGonnaSaveTheWorld" type="Sprite2D" parent="." unique_id=620840514]
+position = Vector2(479, 253)
+scale = Vector2(0.2921875, 0.2921875)
+texture = ExtResource("6_oevsa")
+
+[node name="Button" type="Button" parent="." unique_id=2054102683]
+offset_left = 385.0
+offset_top = 463.0
+offset_right = 561.0
+offset_bottom = 491.0
+text = "keep saving the world
+"
