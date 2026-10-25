@@ -103,9 +103,5 @@ label_settings = SubResource("LabelSettings_v5tiw")
 [node name="CD" parent="." unique_id=1814181835 instance=ExtResource("8_g2j0d")]
 position = Vector2(2582, -29)
 
-[node name="CD2" parent="." unique_id=1744837251 instance=ExtResource("8_g2j0d")]
-position = Vector2(-668, 468)
-
-[connection signal="cd_contact" from="CD" to="." method="_on_cd_cd_contact"]
-[connection signal="cd_contact" from="CD2" to="." method="_on_cd_2_cd_contact"]
 [connection signal="died" from="Player" to="." method="_on_player_died"]
+[connection signal="cd_contact" from="CD" to="." method="_on_cd_cd_contact"]
