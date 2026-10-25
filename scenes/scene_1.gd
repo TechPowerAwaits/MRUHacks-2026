@@ -18,7 +18,7 @@ func _process(delta: float) -> void:
 	
 	if resetting:
 		$Background.position = lerp($Background.position, player_start_pos, 10 * delta)
-		$Player.position = lerp($Plaayer.position, player_start_pos, 10 * delta)
+		$Player.position = lerp($Player.position, player_start_pos, 10 * delta)
 		if abs($Background.position.x - player_start_pos.x) < 10:
 			resetting = false
 		else:

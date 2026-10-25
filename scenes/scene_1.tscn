@@ -66,7 +66,7 @@ sources/1 = SubResource("TileSetAtlasSource_g2j0d")
 [node name="Scene 1" type="Node2D" unique_id=1033258207]
 script = ExtResource("1_t6bmd")
 
-[node name="ScreenshotFrom20261024000303" type="Sprite2D" parent="." unique_id=1695402113]
+[node name="Background" type="Sprite2D" parent="." unique_id=1695402113]
 position = Vector2(-296, 264)
 scale = Vector2(1.1924343, 1.1924342)
 texture = ExtResource("1_ta4h7")
