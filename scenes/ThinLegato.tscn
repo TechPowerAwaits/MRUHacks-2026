@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cmk64vvxlk3to" path="res://assets/lil_slur.png" id="1_1mtkl"]
 
 [node name="ThinLegato" type="StaticBody2D" unique_id=645817703]
+metadata/Slippery = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1573733260]
 texture = ExtResource("1_1mtkl")
