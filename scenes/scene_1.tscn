@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://ba5joy3wmhtdk" path="res://assets/half note.png" id="5_t6bmd"]
 [ext_resource type="AudioStream" uid="uid://ch11kowcwkwrm" path="res://audio/audiostatic.mp3" id="6_g2j0d"]
 [ext_resource type="Script" uid="uid://cpxs8cfy16071" path="res://scenes/audio_stream_player.gd" id="7_p837x"]
+[ext_resource type="FontFile" uid="uid://7lcbhsk16otq" path="res://assets/PixelifySans-VariableFont_wght.ttf" id="7_d7a6c"]
+[ext_resource type="PackedScene" uid="uid://commdma8h1twv" path="res://scenes/cd.tscn" id="8_g2j0d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lki8s"]
 texture = ExtResource("2_cn2eb")
@@ -73,6 +75,9 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_d7a6c")
 sources/1 = SubResource("TileSetAtlasSource_g2j0d")
 
+[sub_resource type="LabelSettings" id="LabelSettings_v5tiw"]
+font = ExtResource("7_d7a6c")
+
 [node name="Scene 1" type="Node2D" unique_id=1033258207]
 script = ExtResource("1_t6bmd")
 
@@ -98,3 +103,15 @@ player = NodePath("../Player")
 [node name="Notes" type="TileMapLayer" parent="." unique_id=1971550015]
 scale = Vector2(2, 2)
 tile_set = SubResource("TileSet_sj5te")
+
+[node name="Label" type="Label" parent="." unique_id=245215452]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "I FEEL ALIVE"
+label_settings = SubResource("LabelSettings_v5tiw")
+
+[node name="CD" parent="." unique_id=1814181835 instance=ExtResource("8_g2j0d")]
+position = Vector2(2582, -29)
+
+[connection signal="died" from="Player" to="." method="_on_player_died"]
+[connection signal="cd_contact" from="CD" to="." method="_on_cd_cd_contact"]

@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://dngig7f5ntvwk"]
+
+[ext_resource type="Script" uid="uid://ds6w810g41113" path="res://scenes/menu.gd" id="1_con2f"]
+[ext_resource type="FontFile" uid="uid://7lcbhsk16otq" path="res://assets/PixelifySans-VariableFont_wght.ttf" id="1_vjb58"]
+[ext_resource type="Texture2D" uid="uid://bfi0bvgq70x2v" path="res://assets/between_lines.png" id="2_con2f"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ng0as"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_v5tiw"]
+font = ExtResource("1_vjb58")
+
+[node name="Menu" type="Node2D" unique_id=361797890]
+script = ExtResource("1_con2f")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=972220238]
+self_modulate = Color(0.22404602, 0.5087428, 1, 1)
+position = Vector2(478.75006, 271.25)
+scale = Vector2(958.5001, 543.5)
+texture = SubResource("CanvasTexture_ng0as")
+
+[node name="Label" type="Label" parent="." unique_id=1401916421]
+offset_left = 75.0
+offset_top = 37.0
+offset_right = 138.0
+offset_bottom = 60.0
+text = "Hey you!"
+label_settings = SubResource("LabelSettings_v5tiw")
+
+[node name="Label" type="Label" parent="Label" unique_id=102825785]
+layout_mode = 0
+offset_top = 46.0
+offset_right = 63.0
+offset_bottom = 69.0
+text = "The world is losing media between the lines..."
+label_settings = SubResource("LabelSettings_v5tiw")
+
+[node name="Label" type="Label" parent="Label/Label" unique_id=241339283]
+layout_mode = 0
+offset_top = 141.0
+offset_right = 338.0
+offset_bottom = 164.0
+text = "We need a hero to revitalize lost music and bring it back into the world!"
+label_settings = SubResource("LabelSettings_v5tiw")
+
+[node name="Button" type="Button" parent="." unique_id=948241931]
+offset_left = 75.0
+offset_top = 344.0
+offset_right = 198.0
+offset_bottom = 375.0
+theme_override_fonts/font = ExtResource("1_vjb58")
+text = "Save the world"
+
+[node name="ExitBtn" type="Button" parent="." unique_id=1310217819]
+offset_left = 267.0
+offset_top = 344.0
+offset_right = 390.0
+offset_bottom = 375.0
+theme_override_fonts/font = ExtResource("1_vjb58")
+text = "Take a rest"
+
+[node name="BetweenLines" type="Sprite2D" parent="." unique_id=434355790]
+position = Vector2(277, 164)
+scale = Vector2(0.4333333, 0.43333334)
+texture = ExtResource("2_con2f")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="ExitBtn" to="." method="_on_exit_btn_pressed"]

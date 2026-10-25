@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bv8kc7lkuj0gr"]
+
+[ext_resource type="Texture2D" uid="uid://cmk64vvxlk3to" path="res://assets/lil_slur.png" id="1_1mtkl"]
+
+[node name="ThinLegato" type="StaticBody2D" unique_id=645817703]
+metadata/Slippery = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1573733260]
+texture = ExtResource("1_1mtkl")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=2011505060]
+position = Vector2(-58, 22)
+polygon = PackedVector2Array(-4, 6, -1, -6, 17, -5, 17, -8, 28, -31, 44, -37, 70, -40, 93, -23, 124, 3)

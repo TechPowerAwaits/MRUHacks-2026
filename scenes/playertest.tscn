@@ -1,11 +1,15 @@
 [gd_scene format=3 uid="uid://bm0avjptxs5fq"]
 
-[ext_resource type="PackedScene" uid="uid://dcwqw78lf5fj1" path="res://scenes/scene_1.tscn" id="1_ge16w"]
 [ext_resource type="PackedScene" uid="uid://crm8sqem28fq4" path="res://scenes/player.tscn" id="2_u6kb2"]
+[ext_resource type="PackedScene" uid="uid://dnoso5r5omqrw" path="res://scenes/ThickLegato.tscn" id="3_l5ouh"]
+[ext_resource type="PackedScene" uid="uid://bv8kc7lkuj0gr" path="res://scenes/ThinLegato.tscn" id="3_u6kb2"]
 
 [node name="Playertest" type="Node2D" unique_id=383740529]
 
-[node name="Scene 1" parent="." unique_id=1033258207 instance=ExtResource("1_ge16w")]
-position = Vector2(-217, -58)
-
 [node name="Player" parent="." unique_id=1494202618 instance=ExtResource("2_u6kb2")]
+
+[node name="ThinLegato" parent="." unique_id=645817703 instance=ExtResource("3_u6kb2")]
+position = Vector2(-2, 71)
+
+[node name="ThickLegato" parent="." unique_id=1289518613 instance=ExtResource("3_l5ouh")]
+position = Vector2(216, 81)

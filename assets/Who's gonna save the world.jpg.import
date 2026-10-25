@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bv7efd1oosjoh"
-path="res://.godot/imported/characters.png-71e65985a77efe7b4b18913c785b67f9.ctex"
+uid="uid://dvwqy3xc1mp4j"
+path="res://.godot/imported/Who's gonna save the world.jpg-ec7e7f12faef2f163a8a83612c8b7d26.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters.png"
-dest_files=["res://.godot/imported/characters.png-71e65985a77efe7b4b18913c785b67f9.ctex"]
+source_file="res://assets/Who's gonna save the world.jpg"
+dest_files=["res://.godot/imported/Who's gonna save the world.jpg-ec7e7f12faef2f163a8a83612c8b7d26.ctex"]
 
 [params]
 
