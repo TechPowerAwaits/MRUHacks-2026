@@ -104,3 +104,4 @@ label_settings = SubResource("LabelSettings_v5tiw")
 position = Vector2(2582, -29)
 
 [connection signal="died" from="Player" to="." method="_on_player_died"]
+[connection signal="cd_contact" from="CD" to="." method="_on_cd_cd_contact"]
