@@ -1,8 +1,9 @@
 extends CharacterBody2D
 
 @export var speed = 300.0
-@export var short_jump_speed = 400.0
-@export var long_jump_speed = 800.0
+@export var short_jump_speed = 500.0
+## The short_jump_speed is added to this speed.
+@export var long_jump_speed = 400.0
 
 @onready var jumping = false
 
