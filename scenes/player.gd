@@ -7,6 +7,8 @@ extends CharacterBody2D
 
 @onready var jumping = false
 
+signal died
+
 func _ready():
 	# There is supposed to be a property that allows you to autoplay an animation.
 	# I do not see it in the inspector, so here is this hack.
@@ -23,6 +25,7 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 	
+	handle_fall_death()
 	var collision = get_last_slide_collision()
 	if collision:
 		handle_special_properties(collision.get_collider())
@@ -51,6 +54,14 @@ func handle_move():
 		velocity.x = move_toward(velocity.x, 0, speed)
 
 
+func handle_fall_death():
+	if not is_on_floor():
+		if $LethalFallTimer.is_stopped():
+			$LethalFallTimer.start()
+	else:
+		$LethalFallTimer.stop()
+
+
 func handle_special_properties(obj: Object):
 	if obj.get_meta("Slippery", false):
 		handle_slippery_slope()
@@ -60,3 +71,7 @@ func handle_slippery_slope():
 	var facing_right = not $AnimatedSprite2D.flip_h
 	velocity.x = (speed / 2) * (-1 if facing_right else 1)
 	move_and_slide()
+
+
+func _on_lethal_fall_timer_timeout() -> void:
+	emit_signal("died")
