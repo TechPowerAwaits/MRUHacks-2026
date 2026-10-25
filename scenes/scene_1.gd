@@ -29,4 +29,7 @@ func _process(delta: float) -> void:
 	$Background.position.y = $Player.position.y
 	pass
 
-	
+
+func _on_cd_cd_contact() -> void:
+	get_tree().change_scene_to_file("res://scenes/expo1.tscn")
+	pass # Replace with function body.
