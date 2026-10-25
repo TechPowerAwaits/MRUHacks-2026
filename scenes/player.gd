@@ -29,12 +29,12 @@ func handle_jump():
 	if is_on_floor():
 		if Input.is_action_just_pressed("jump"):
 			jumping = true
-			$LongJumpTimer.start()
-		if Input.is_action_just_released("jump"):
-			$LongJumpTimer.stop()
-			if jumping:
-				velocity.y += -short_jump_speed
-				jumping = false
+			velocity.y += -short_jump_speed
+			await get_tree().create_timer(0.3, true, true).timeout
+			if Input.is_action_pressed("jump"):
+				velocity.y += -long_jump_speed
+	else:
+		jumping = false
 
 
 func handle_move():
@@ -54,9 +54,3 @@ func handle_angles():
 	if platform_angle != 0:
 		set_rotation(platform_angle)
 		velocity.x += sign(platform_angle) * speed / 2
-
-
-func _on_long_jump_timer_timeout() -> void:
-	if is_on_floor() and jumping:
-		velocity.y += -long_jump_speed
-		jumping = false
