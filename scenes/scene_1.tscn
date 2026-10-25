@@ -48,6 +48,8 @@ texture = ExtResource("2_cn2eb")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_lki8s")
 
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_2k8qw"]
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d7a6c"]
 texture = ExtResource("4_lki8s")
 0:3/size_in_atlas = Vector2i(3, 5)
@@ -84,6 +86,10 @@ tile_set = SubResource("TileSet_d7a6c")
 [node name="Player" parent="." unique_id=1494202618 instance=ExtResource("3_sj5te")]
 position = Vector2(-920, 456)
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Player" unique_id=534593423]
+stream = SubResource("AudioStreamSynchronized_2k8qw")
+autoplay = true
+
 [node name="Notes" type="TileMapLayer" parent="." unique_id=1971550015]
 scale = Vector2(2, 2)
 tile_set = SubResource("TileSet_sj5te")
@@ -102,3 +108,4 @@ position = Vector2(-668, 468)
 
 [connection signal="cd_contact" from="CD" to="." method="_on_cd_cd_contact"]
 [connection signal="cd_contact" from="CD2" to="." method="_on_cd_2_cd_contact"]
+[connection signal="died" from="Player" to="." method="_on_player_died"]

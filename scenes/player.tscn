@@ -102,10 +102,10 @@ shape = SubResource("RectangleShape2D_xj5dx")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=643042477]
 
-[node name="LongJumpTimer" type="Timer" parent="." unique_id=1229951167]
+[node name="LethalFallTimer" type="Timer" parent="." unique_id=1451063576]
 process_callback = 0
-wait_time = 0.5
+wait_time = 3.0
 one_shot = true
 
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
-[connection signal="timeout" from="LongJumpTimer" to="." method="_on_long_jump_timer_timeout"]
+[connection signal="timeout" from="LethalFallTimer" to="." method="_on_lethal_fall_timer_timeout"]
