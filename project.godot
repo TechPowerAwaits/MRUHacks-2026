@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="MRUHacks-2026"
-run/main_scene="uid://dcwqw78lf5fj1"
+run/main_scene="uid://dngig7f5ntvwk"
 config/features=PackedStringArray("4.7")
 config/icon="res://icon.svg"
 

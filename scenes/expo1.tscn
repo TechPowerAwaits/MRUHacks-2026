@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cg6a6q4v5qdfw"]
 
-[ext_resource type="Script" uid="uid://ds6w810g41113" path="res://scenes/menu.gd" id="1_4bcsy"]
+[ext_resource type="Script" uid="uid://37ha7tn60ps4" path="res://scenes/expo_1.gd" id="1_62yk7"]
 [ext_resource type="FontFile" uid="uid://7lcbhsk16otq" path="res://assets/PixelifySans-VariableFont_wght.ttf" id="2_lum1r"]
 [ext_resource type="Texture2D" uid="uid://bfi0bvgq70x2v" path="res://assets/between_lines.png" id="3_llbeh"]
 [ext_resource type="Texture2D" uid="uid://pse44pl6805n" path="res://assets/cd.png" id="5_62yk7"]
@@ -13,7 +13,7 @@
 font = ExtResource("2_lum1r")
 
 [node name="Exposition" type="Node2D" unique_id=361797890]
-script = ExtResource("1_4bcsy")
+script = ExtResource("1_62yk7")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=972220238]
 self_modulate = Color(0.22404602, 0.5087428, 1, 1)
@@ -65,4 +65,3 @@ text = "keep saving the world
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1258014565]
 stream = ExtResource("6_62yk7")
-autoplay = true
