@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://84fnyocut24n"]
 
+[ext_resource type="Script" uid="uid://cxv8qbylrmfxa" path="res://scenes/death.gd" id="1_tjai8"]
 [ext_resource type="FontFile" uid="uid://7lcbhsk16otq" path="res://assets/PixelifySans-VariableFont_wght.ttf" id="2_q1r8t"]
 [ext_resource type="Texture2D" uid="uid://bfi0bvgq70x2v" path="res://assets/between_lines.png" id="3_6up1m"]
 
@@ -13,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_tjai8")
 
 [node name="Background" type="ColorRect" parent="." unique_id=919260496]
 layout_mode = 1
@@ -64,15 +66,15 @@ offset_right = 222.0
 offset_bottom = 48.0
 grow_vertical = 2
 
-[node name="MainMenu" type="Button" parent="VBoxContainer" unique_id=1131751303]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_q1r8t")
-text = "Main Menu"
-
 [node name="Retry" type="Button" parent="VBoxContainer" unique_id=948241931]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_q1r8t")
 text = "Retry"
 
-[connection signal="pressed" from="VBoxContainer/MainMenu" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/Retry" to="." method="_on_button_pressed"]
+[node name="MainMenu" type="Button" parent="VBoxContainer" unique_id=1131751303]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_q1r8t")
+text = "Main Menu"
+
+[connection signal="pressed" from="VBoxContainer/Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="VBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]
