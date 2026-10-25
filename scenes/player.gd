@@ -23,6 +23,7 @@ func _physics_process(delta: float) -> void:
 	
 	handle_jump()
 	handle_move()
+	handle_angles()
 
 	move_and_slide()
 
@@ -51,6 +52,13 @@ func handle_move():
 			state = IDLE
 			velocity.x = move_toward(velocity.x, 0, speed)
 
+
+func handle_angles():
+	var platform_angle = get_floor_angle() * sign(get_floor_normal().x)
+
+	if platform_angle != 0:
+		set_rotation(platform_angle)
+		velocity.x = sign(platform_angle) * speed / 2
 
 
 func _on_animated_sprite_2d_frame_changed() -> void:
