@@ -20,10 +20,12 @@ func _physics_process(delta: float) -> void:
 	
 	handle_jump()
 	handle_move()
-	# Bugged. Sometimes causes the player to be embedded within the platforms.
-	#handle_angles()
 
 	move_and_slide()
+	
+	var collision = get_last_slide_collision()
+	if collision:
+		handle_special_properties(collision.get_collider())
 
 
 func handle_jump():
@@ -49,9 +51,12 @@ func handle_move():
 		velocity.x = move_toward(velocity.x, 0, speed)
 
 
-func handle_angles():
-	var platform_angle = get_floor_angle() * sign(get_floor_normal().x)
+func handle_special_properties(obj: Object):
+	if obj.get_meta("Slippery", false):
+		handle_slippery_slope()
 
-	if platform_angle != 0:
-		set_rotation(platform_angle)
-		velocity.x += sign(platform_angle) * speed / 2
+
+func handle_slippery_slope():
+	var facing_right = not $AnimatedSprite2D.flip_h
+	velocity.x = (speed / 2) * (-1 if facing_right else 1)
+	move_and_slide()
