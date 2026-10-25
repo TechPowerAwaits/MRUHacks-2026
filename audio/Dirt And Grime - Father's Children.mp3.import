@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://btr4j6wnn7skl"
+path="res://.godot/imported/Dirt And Grime - Father's Children.mp3-fd2f7671d1f46a1aa65439015fafe2a2.mp3str"
+
+[deps]
+
+source_file="res://audio/Dirt And Grime - Father's Children.mp3"
+dest_files=["res://.godot/imported/Dirt And Grime - Father's Children.mp3-fd2f7671d1f46a1aa65439015fafe2a2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
