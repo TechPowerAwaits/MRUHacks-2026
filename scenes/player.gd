@@ -1,12 +1,10 @@
 extends CharacterBody2D
 
-enum {IDLE, WALK, PREP_JUMP, JUMP}
-
 @export var speed = 300.0
 @export var short_jump_speed = 400.0
 @export var long_jump_speed = 800.0
 
-@onready var state = IDLE
+@onready var jumping = false
 
 func _ready():
 	# There is supposed to be a property that allows you to autoplay an animation.
@@ -30,27 +28,24 @@ func _physics_process(delta: float) -> void:
 func handle_jump():
 	if is_on_floor():
 		if Input.is_action_just_pressed("jump"):
-			state = PREP_JUMP
+			jumping = true
 			$LongJumpTimer.start()
 		if Input.is_action_just_released("jump"):
 			$LongJumpTimer.stop()
-			if state == PREP_JUMP:
+			if jumping:
 				velocity.y += -short_jump_speed
-				state = IDLE
+				jumping = false
 
 
 func handle_move():
-	if state != PREP_JUMP:
-		var direction := Input.get_axis("move_left", "move_right")
-		if direction:
-			state = WALK
-			$AnimatedSprite2D.flip_h = (direction < 0)
-			$AnimatedSprite2D.play("walking")
-			velocity.x = direction * speed
-		else:
-			state = IDLE
-			$AnimatedSprite2D.play("default")
-			velocity.x = move_toward(velocity.x, 0, speed)
+	var direction := Input.get_axis("move_left", "move_right")
+	if direction:
+		$AnimatedSprite2D.flip_h = (direction < 0)
+		$AnimatedSprite2D.play("walking")
+		velocity.x = direction * speed
+	else:
+		$AnimatedSprite2D.play("default")
+		velocity.x = move_toward(velocity.x, 0, speed)
 
 
 func handle_angles():
@@ -62,6 +57,6 @@ func handle_angles():
 
 
 func _on_long_jump_timer_timeout() -> void:
-	if is_on_floor() and state == PREP_JUMP:
+	if is_on_floor() and jumping:
 		velocity.y += -long_jump_speed
-		state = IDLE
+		jumping = false
