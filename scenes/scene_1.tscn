@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://dcwqw78lf5fj1"]
 
+[ext_resource type="Script" uid="uid://dran5avnd7ysx" path="res://scenes/scene_1.gd" id="1_t6bmd"]
 [ext_resource type="Texture2D" uid="uid://udx8yaj7ojg3" path="res://assets/level 2.png" id="1_ta4h7"]
 [ext_resource type="Texture2D" uid="uid://c0j801ei403i0" path="res://assets/stave.png" id="2_cn2eb"]
 [ext_resource type="PackedScene" uid="uid://crm8sqem28fq4" path="res://scenes/player.tscn" id="3_sj5te"]
@@ -63,6 +64,7 @@ sources/0 = SubResource("TileSetAtlasSource_d7a6c")
 sources/1 = SubResource("TileSetAtlasSource_g2j0d")
 
 [node name="Scene 1" type="Node2D" unique_id=1033258207]
+script = ExtResource("1_t6bmd")
 
 [node name="ScreenshotFrom20261024000303" type="Sprite2D" parent="." unique_id=1695402113]
 position = Vector2(-296, 264)
