@@ -3,11 +3,13 @@ extends Node2D
 
 var player_start_pos: Vector2
 var resetting: bool = false
+#var level
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	player_start_pos = $Player.position
 	$Background.position = player_start_pos
+	$Background.texture = load("res://assets/level 2.png")
 	pass # Replace with function body.
 
 
