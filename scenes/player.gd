@@ -1,7 +1,5 @@
 extends CharacterBody2D
 
-const WALK_TO_IDLE_FRAME = 2
-
 enum {IDLE, WALK, PREP_JUMP, JUMP}
 
 @export var speed = 300.0
@@ -51,6 +49,7 @@ func handle_move():
 			velocity.x = direction * speed
 		else:
 			state = IDLE
+			$AnimatedSprite2D.play("default")
 			velocity.x = move_toward(velocity.x, 0, speed)
 
 
@@ -60,13 +59,6 @@ func handle_angles():
 	if platform_angle != 0:
 		set_rotation(platform_angle)
 		velocity.x += sign(platform_angle) * speed / 2
-
-
-func _on_animated_sprite_2d_frame_changed() -> void:
-	if state == IDLE:
-		if ($AnimatedSprite2D.animation == "walking" and
-			$AnimatedSprite2D.frame == WALK_TO_IDLE_FRAME):
-				$AnimatedSprite2D.play("default")
 
 
 func _on_long_jump_timer_timeout() -> void:
