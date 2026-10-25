@@ -8,5 +8,5 @@
 texture = ExtResource("1_1mtkl")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=2011505060]
-position = Vector2(-55, 13)
-polygon = PackedVector2Array(1, 2, 28, -17, 50, -23, 73, -20, 93, -10, 111, 3)
+position = Vector2(-58, 22)
+polygon = PackedVector2Array(-4, 6, -1, -6, 17, -5, 17, -8, 28, -31, 44, -37, 70, -40, 93, -23, 124, 3)
